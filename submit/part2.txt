@@ -1,0 +1,149 @@
+--Fpath S1.txt --alg BFS 
+Total nodes generated: <<??>>
+Total time taken: >15 min
+Path length: Timed out.
+Path: Timed out.
+ 
+--Fpath S1.txt --alg IDS 
+Total nodes generated: <<??>>
+Total time taken: >15 min
+Path length: Timed out.
+Path: Timed out.
+ 
+--Fpath S1.txt --alg h1 
+Total nodes generated: 36439
+Total time taken:, 15 sec 826794 microSec
+Path length: 24
+A valid sequence of actions: RDRULDRDLURULDRDLLURRULL
+ 
+--Fpath S1.txt --alg h2 
+Total nodes generated: 10002
+Total time taken:, 1 sec 379871 microSec
+Path length: 24
+A valid sequence of actions: RDRULDRDLURULDRDLLURRULL
+ 
+--Fpath S1.txt --alg h3 
+Total nodes generated: 10000
+Total time taken:, 1 sec 373797 microSec
+Path length: 24
+A valid sequence of actions: RDRULDRDLURULDRDLLURRULL
+ 
+--Fpath S2.txt --alg BFS 
+Total nodes generated: <<??>>
+Total time taken: >15 min
+Path length: Timed out.
+Path: Timed out.
+ 
+--Fpath S2.txt --alg IDS 
+Total nodes generated: <<??>>
+Total time taken: >15 min
+Path length: Timed out.
+Path: Timed out.
+ 
+--Fpath S2.txt --alg h1 
+Total nodes generated: 5364
+Total time taken:, 0 sec 384053 microSec
+Path length: 20
+A valid sequence of actions: LDLURDDLURRDLLURRULL
+ 
+--Fpath S2.txt --alg h2 
+Total nodes generated: 603
+Total time taken:, 0 sec 8564 microSec
+Path length: 20
+A valid sequence of actions: LDLURDDLURRDLLURRULL
+ 
+--Fpath S2.txt --alg h3 
+Total nodes generated: 603
+Total time taken:, 0 sec 8886 microSec
+Path length: 20
+A valid sequence of actions: LDLURDDLURRDLLURRULL
+ 
+--Fpath S3.txt --alg BFS 
+The inputted puzzle is not solvable:
+2 5 3
+4 _ 7
+8 6 1
+ 
+--Fpath S3.txt --alg IDS 
+The inputted puzzle is not solvable:
+2 5 3
+4 _ 7
+8 6 1
+ 
+--Fpath S3.txt --alg h1 
+The inputted puzzle is not solvable:
+2 5 3
+4 _ 7
+8 6 1
+ 
+--Fpath S3.txt --alg h2 
+The inputted puzzle is not solvable:
+2 5 3
+4 _ 7
+8 6 1
+ 
+--Fpath S3.txt --alg h3 
+The inputted puzzle is not solvable:
+2 5 3
+4 _ 7
+8 6 1
+ 
+--Fpath S4.txt --alg BFS 
+Total nodes generated: 1410
+Total time taken:, 0 sec 1970 microSec
+Path length: 6
+A valid sequence of actions: RRDLLU
+ 
+--Fpath S4.txt --alg IDS 
+Total nodes generated: 783
+Total time taken:, 0 sec 1100 microSec
+Path length: 6
+A valid sequence of actions: RRDLLU
+ 
+--Fpath S4.txt --alg h1 
+Total nodes generated: 20
+Total time taken:, 0 sec 96 microSec
+Path length: 6
+A valid sequence of actions: RRDLLU
+ 
+--Fpath S4.txt --alg h2 
+Total nodes generated: 20
+Total time taken:, 0 sec 141 microSec
+Path length: 6
+A valid sequence of actions: RRDLLU
+ 
+--Fpath S4.txt --alg h3 
+Total nodes generated: 20
+Total time taken:, 0 sec 191 microSec
+Path length: 6
+A valid sequence of actions: RRDLLU
+ 
+--Fpath S5.txt --alg BFS 
+Total nodes generated: <<??>>
+Total time taken: >15 min
+Path length: Timed out.
+Path: Timed out.
+ 
+--Fpath S5.txt --alg IDS 
+Total nodes generated: <<??>>
+Total time taken: >15 min
+Path length: Timed out.
+Path: Timed out.
+ 
+--Fpath S5.txt --alg h1 
+Total nodes generated: <<??>>
+Total time taken: >15 min
+Path length: Timed out.
+Path: Timed out.
+ 
+--Fpath S5.txt --alg h2 
+Total nodes generated: 43932
+Total time taken:, 25 sec 565484 microSec
+Path length: 31
+A valid sequence of actions: URRDLDRULLDRUURDDLULURDLDRURULL
+ 
+--Fpath S5.txt --alg h3 
+Total nodes generated: 43932
+Total time taken:, 24 sec 786759 microSec
+Path length: 31
+A valid sequence of actions: URRDLDRULLDRUURDDLULURDLDRURULL
