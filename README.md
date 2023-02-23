@@ -7,6 +7,7 @@
   - [Run Part 2](#run-part-2)
   - [Run Part 3](#run-part-3)
   - [Analysis of performance](#analysis-of-performance)
+  - [Conclusions](#conclusions)
 
 ## File directory
 
@@ -25,7 +26,7 @@ The following algorithms are implemented in search
 2. IDS (Iterative deepening DFS)
 3. A\* with misplaced title heuristic. (h1)
 4. A\* with Manhattan distance heuristic (h2).
-5. A\* with one more heuristic (invent or check the literature for this) (h3)
+5. A\* with max of misplaced tile and Manhattan distance heuristic (h3).
 
 ## Puzzle format
 
@@ -132,6 +133,12 @@ output is in [submit/part3.txt](submit/part3.txt)
 
 ## Analysis of performance
 
+![table](figs/table.jpeg)
+
 ![graph](figs/graph.png)
 
-![table](figs/table.jpeg)
+![logged graph](figs/log_graph.png)
+
+## Conclusions
+
+On L8, we can observe that IDS generates 3 times more nodes but has a similar average runtime compared to BFS. However, heuristic search algorithms (h1, h2, h3) are ~10x faster and generates 10x fewer nodes on average compared to BFS and IDS. On this level, h1 is faster than h2 and h3, but as the level increases, h2 and h3 is similar in performance (both runtime and \#nodes) and is much faster than h1. BFS and IDS also increases exponentially as levels increase, where BFS is slower than IDS but generates fewer nodes on average, and IDS is faster but generates far more on average. Overall the best algorithm is h2, which is the Manhattan distance heuristic, but h3 follows closely behind.
