@@ -106,7 +106,7 @@ expected output is in [test/test_out/part2.txt](test/test_out/part2.txt)
 Run on part 2
 
 ```bash
-python perf_analysis_p2.py --in_dir part2 --out_dir submit
+python perf_analysis_p2.py --in_dir Part2 --out_dir submit
 ```
 
 output is in [submit/part2.txt](submit/part2.txt)
@@ -131,7 +131,7 @@ where the values are tuples, and index 0 is the average nodes generated and inde
 Run on part 3
 
 ```bash
-python perf_analysis_p3.py --in_dir part3 --out_dir submit
+python perf_analysis_p3.py --in_dir Part3 --out_dir submit
 ```
 
 output is in [submit/part3.txt](submit/part3.txt)
