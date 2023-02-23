@@ -7,15 +7,20 @@ import argparse
 from pathlib import Path
 from multiprocessing import Pool
 import re
+import concurrent.futures
 
 
 def main(dir, out):
+    def run_helper(args):
+        return run(*args)
 
     algs = ["BFS", "IDS", "h1", "h2", "h3"]
 
     dirs = os.listdir(dir)
     # sort by digits in string
     dirs.sort(key=lambda f: int(re.sub(r"\D", "", f)))
+
+    # create dictionary to store results
 
     start_time = datetime.now()
     with tqdm(
@@ -35,14 +40,44 @@ def main(dir, out):
                 total_time = 0
                 total_nodes = 0
 
-                with Pool(processes=5) as pool:
-                    results = pool.starmap(
-                        run, [(f"{dir}/{d}/{file}", alg, 1) for file in files]
-                    )
+                # # This doesn't work because signal only works on main thread
+                # with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+                #    results = list(
+                #        tqdm(
+                #            executor.map(
+                #                run_helper,
+                #                ((f"{dir}/{d}/{file}", alg, 1) for file in files),
+                #            ),
+                #            total=total_files_cnt,
+                #        )
+                #    )
 
-                for result in results:
+                #    for result in results:
+                #        total_time += result["time"]
+                #        total_nodes += result["nodes"]
+
+                ## This is slower than running in serial (time out is happening for BFS)
+                # with Pool() as pool:
+                #    results = list(
+                #        tqdm(
+                #            pool.starmap(
+                #                run, [(f"{dir}/{d}/{file}", alg, 1) for file in files]
+                #            ),
+                #            total=total_files_cnt,
+                #        )
+                #    )
+
+                # for result in results:
+                #    total_time += result["time"]
+                #    total_nodes += result["nodes"]
+
+                for file in files:
+                    t.set_description(f"Running {alg} on {file}")
+                    result = run(f"{dir}/{d}/{file}", alg, 1)
                     total_time += result["time"]
                     total_nodes += result["nodes"]
+
+                    t.update(1)
 
                 # calculate averages
                 avg_time = total_time / total_files_cnt
@@ -56,8 +91,6 @@ def main(dir, out):
             with open(f"{out}/part3.txt", "a") as f:
                 f.write(f"Level: {d} \n")
                 pprint(avgs, stream=f)
-
-            t.update(1)
 
     end_time = datetime.now()
     time = end_time - start_time

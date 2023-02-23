@@ -1,0 +1,30 @@
+--Fpath easy.txt --alg BFS 
+Total nodes generated: 29
+Total time taken:, 0 sec 115 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+ 
+--Fpath easy.txt --alg IDS 
+Total nodes generated: 48
+Total time taken:, 0 sec 149 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+ 
+--Fpath easy.txt --alg h1 
+Total nodes generated: 12
+Total time taken:, 0 sec 107 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+ 
+--Fpath easy.txt --alg h2 
+Total nodes generated: 12
+Total time taken:, 0 sec 202 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+ 
+--Fpath easy.txt --alg h3 
+Total nodes generated: 12
+Total time taken:, 0 sec 184 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+ 

@@ -6,6 +6,7 @@
   - [How to run](#how-to-run)
   - [Run Part 2](#run-part-2)
   - [Run Part 3](#run-part-3)
+  - [Analysis of performance](#analysis-of-performance)
 
 ## File directory
 
@@ -75,7 +76,7 @@ python main.py --fPath <PATH_TO_FILE> --alg <ALGORITHM_NAME>
 example run
 
 ```bash
-python main.py --fPath Test_p2/easy.txt --alg h1
+python main.py --fPath test/test_p2/easy.txt --alg h1
 ## expected output
 # Total nodes generated: 12
 # Total time taken:, 0 sec 64 microSec
@@ -91,79 +92,18 @@ there’ll be 25 runs).
 Run on sample
 
 ```bash
-python perf_analysis_p2.py --in_dir Test_p2 --out_dir test_out
+python perf_analysis_p2.py --in_dir test/test_p2 --out_dir test/test_out
 ```
 
-expected output
-
-```txt
---Fpath easy.txt --alg BFS
-Total nodes generated: 29
-Total time taken:, 0 sec 73 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg IDS
-Total nodes generated: 48
-Total time taken:, 0 sec 102 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg h1
-Total nodes generated: 12
-Total time taken:, 0 sec 63 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg h2
-Total nodes generated: 12
-Total time taken:, 0 sec 93 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg h3
-Total nodes generated: 12
-Total time taken:, 0 sec 116 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg BFS
-Total nodes generated: 29
-Total time taken:, 0 sec 75 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg IDS
-Total nodes generated: 48
-Total time taken:, 0 sec 99 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg h1
-Total nodes generated: 12
-Total time taken:, 0 sec 68 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg h2
-Total nodes generated: 12
-Total time taken:, 0 sec 101 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
---Fpath easy.txt --alg h3
-Total nodes generated: 12
-Total time taken:, 0 sec 112 microSec
-Path length: 4
-A valid sequence of actions: DRUL
-
-```
+expected output is in [test/test_out/part2.txt](test/test_out/part2.txt)
 
 Run on part 2
 
 ```bash
-python perf_analysis_p2.py --in_dir Part2 --out_dir submit
+python perf_analysis_p2.py --in_dir part2 --out_dir submit
 ```
+
+output is in [submit/part2.txt](submit/part2.txt)
 
 ## Run Part 3
 
@@ -175,36 +115,23 @@ In this part, we compare the performance of the algorithms
 Run on sample
 
 ```bash
-python perf_analysis_p3.py --in_dir Test_p3 --out_dir test_out
+python perf_analysis_p3.py --in_dir test/test_p3 --out_dir test/test_out
 ```
 
-expected output
+expected output is in [test/test_out/part3.txt](test/test_out/part3.txt)
 
-```txt
-Level: L3
-{'BFS': (29.0, '00:00:000081'),
- 'IDS': (48.0, '00:00:000100'),
- 'h1': (12.0, '00:00:000073'),
- 'h2': (12.0, '00:00:000103'),
- 'h3': (12.0, '00:00:000119')}
-Level: L2
-{'BFS': (29.0, '00:00:000086'),
- 'IDS': (48.0, '00:00:000101'),
- 'h1': (12.0, '00:00:000073'),
- 'h2': (12.0, '00:00:000108'),
- 'h3': (12.0, '00:00:000122')}
-Level: L1
-{'BFS': (29.0, '00:00:000082'),
- 'IDS': (48.0, '00:00:000102'),
- 'h1': (12.0, '00:00:000075'),
- 'h2': (12.0, '00:00:000144'),
- 'h3': (12.0, '00:00:000128')}
-```
-
-where the first number in tuple is the average nodes generated and the second number is the average time taken.
+where the values are tuples, and index 0 is the average nodes generated and index 1 is the average time taken in the format `mm:ss:msmsms`
 
 Run on part 3
 
 ```bash
-python perf_analysis_p3.py --in_dir Part3 --out_dir submit
+python perf_analysis_p3.py --in_dir part3 --out_dir submit
 ```
+
+output is in [submit/part3.txt](submit/part3.txt)
+
+## Analysis of performance
+
+![graph](figs/graph.png)
+
+![table](figs/table.jpeg)
