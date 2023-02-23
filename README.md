@@ -133,7 +133,7 @@ output is in [submit/part3.txt](submit/part3.txt)
 
 ## Analysis of performance
 
-![table](figs/table.jpeg)
+![table](figs/table.png)
 
 ![graph](figs/graph.png)
 
