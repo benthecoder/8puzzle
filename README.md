@@ -13,6 +13,11 @@
 
 ```txt
 📁 8-puzzle
+┣━━ part2 - 5 8-puzzles
+┣━━ part3 - 60 8-puzzles from each of 8, 15, and 24 levels
+┣━━ test - sample part2 and part3 to test perf_analysis
+┣━━ figs - table and charts
+┣━━ graph.ipynb - code to generate graphs
 ┣━━ main.py - parse command line arguments and run the program
 ┣━━ search.py - implements search algorithms and classes
 ┣━━ utils.py - implements utility functions like reading input file, printing output, heuristics, etc.
