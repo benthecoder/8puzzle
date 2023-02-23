@@ -1,60 +1,60 @@
 --Fpath S1.txt --alg BFS 
-Total nodes generated: <<??>>
-Total time taken: >15 min
-Path length: Timed out.
-Path: Timed out.
+Total nodes generated: 266520
+Total time taken:, 198 sec 333319 microSec
+Path length: 24
+A valid sequence of actions: DDRRUULDDRULDLUURRDLDLUU
  
 --Fpath S1.txt --alg IDS 
-Total nodes generated: <<??>>
-Total time taken: >15 min
-Path length: Timed out.
-Path: Timed out.
+Total nodes generated: 679107
+Total time taken:, 0 sec 961805 microSec
+Path length: 32
+A valid sequence of actions: DURRDDLURDLUURDDLURDLUURDLDLURUL
  
 --Fpath S1.txt --alg h1 
 Total nodes generated: 36439
-Total time taken:, 15 sec 826794 microSec
+Total time taken:, 16 sec 227318 microSec
 Path length: 24
 A valid sequence of actions: RDRULDRDLURULDRDLLURRULL
  
 --Fpath S1.txt --alg h2 
 Total nodes generated: 10002
-Total time taken:, 1 sec 379871 microSec
+Total time taken:, 1 sec 394077 microSec
 Path length: 24
 A valid sequence of actions: RDRULDRDLURULDRDLLURRULL
  
 --Fpath S1.txt --alg h3 
 Total nodes generated: 10000
-Total time taken:, 1 sec 373797 microSec
+Total time taken:, 1 sec 405348 microSec
 Path length: 24
 A valid sequence of actions: RDRULDRDLURULDRDLLURRULL
  
 --Fpath S2.txt --alg BFS 
-Total nodes generated: <<??>>
-Total time taken: >15 min
-Path length: Timed out.
-Path: Timed out.
+Total nodes generated: 98290
+Total time taken:, 44 sec 415889 microSec
+Path length: 20
+A valid sequence of actions: LDLURDDLURRDLLURRULL
  
 --Fpath S2.txt --alg IDS 
-Total nodes generated: <<??>>
-Total time taken: >15 min
-Path length: Timed out.
-Path: Timed out.
+Total nodes generated: 1853465
+Total time taken:, 2 sec 681473 microSec
+Path length: 42
+A valid sequence of actions: DDLUURDDLUURDDLULURDDRUULDRDLLURRDLLUURDLU
  
 --Fpath S2.txt --alg h1 
 Total nodes generated: 5364
-Total time taken:, 0 sec 384053 microSec
+Total time taken:, 0 sec 416107 microSec
 Path length: 20
 A valid sequence of actions: LDLURDDLURRDLLURRULL
  
 --Fpath S2.txt --alg h2 
 Total nodes generated: 603
-Total time taken:, 0 sec 8564 microSec
+Total time taken:, 0 sec 8389 microSec
 Path length: 20
 A valid sequence of actions: LDLURDDLURRDLLURRULL
  
 --Fpath S2.txt --alg h3 
 Total nodes generated: 603
-Total time taken:, 0 sec 8886 microSec
+Total time taken:, 0 sec 9217 microSec
 Path length: 20
 A valid sequence of actions: LDLURDDLURRDLLURRULL
  
@@ -89,46 +89,46 @@ The inputted puzzle is not solvable:
 8 6 1
  
 --Fpath S4.txt --alg BFS 
-Total nodes generated: 1410
-Total time taken:, 0 sec 1970 microSec
+Total nodes generated: 140
+Total time taken:, 0 sec 424 microSec
 Path length: 6
 A valid sequence of actions: RRDLLU
  
 --Fpath S4.txt --alg IDS 
-Total nodes generated: 783
-Total time taken:, 0 sec 1100 microSec
-Path length: 6
-A valid sequence of actions: RRDLLU
+Total nodes generated: 510
+Total time taken:, 0 sec 813 microSec
+Path length: 8
+A valid sequence of actions: DURRDLLU
  
 --Fpath S4.txt --alg h1 
 Total nodes generated: 20
-Total time taken:, 0 sec 96 microSec
+Total time taken:, 0 sec 98 microSec
 Path length: 6
 A valid sequence of actions: RRDLLU
  
 --Fpath S4.txt --alg h2 
 Total nodes generated: 20
-Total time taken:, 0 sec 141 microSec
+Total time taken:, 0 sec 137 microSec
 Path length: 6
 A valid sequence of actions: RRDLLU
  
 --Fpath S4.txt --alg h3 
 Total nodes generated: 20
-Total time taken:, 0 sec 191 microSec
+Total time taken:, 0 sec 170 microSec
 Path length: 6
 A valid sequence of actions: RRDLLU
  
 --Fpath S5.txt --alg BFS 
-Total nodes generated: <<??>>
-Total time taken: >15 min
-Path length: Timed out.
-Path: Timed out.
+Total nodes generated: 483752
+Total time taken:, 339 sec 898476 microSec
+Path length: 31
+A valid sequence of actions: DRURULDLURDDRUULDLDRRULLDRRULUL
  
 --Fpath S5.txt --alg IDS 
-Total nodes generated: <<??>>
-Total time taken: >15 min
-Path length: Timed out.
-Path: Timed out.
+Total nodes generated: 1514635
+Total time taken:, 2 sec 161000 microSec
+Path length: 41
+A valid sequence of actions: DUURDDRUULDDLUURDRDLLURURDDLLUURDLURRDLLU
  
 --Fpath S5.txt --alg h1 
 Total nodes generated: <<??>>
@@ -138,12 +138,13 @@ Path: Timed out.
  
 --Fpath S5.txt --alg h2 
 Total nodes generated: 43932
-Total time taken:, 25 sec 565484 microSec
+Total time taken:, 24 sec 696329 microSec
 Path length: 31
 A valid sequence of actions: URRDLDRULLDRUURDDLULURDLDRURULL
  
 --Fpath S5.txt --alg h3 
 Total nodes generated: 43932
-Total time taken:, 24 sec 786759 microSec
+Total time taken:, 24 sec 818584 microSec
 Path length: 31
 A valid sequence of actions: URRDLDRULLDRUURDDLULURDLDRURULL
+ 

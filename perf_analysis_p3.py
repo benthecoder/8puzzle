@@ -5,6 +5,8 @@ from pprint import pprint
 from datetime import datetime
 import argparse
 from pathlib import Path
+from multiprocessing import Pool
+import re
 
 
 def main(dir, out):
@@ -12,7 +14,8 @@ def main(dir, out):
     algs = ["BFS", "IDS", "h1", "h2", "h3"]
 
     dirs = os.listdir(dir)
-    dirs.sort()
+    # sort by digits in string
+    dirs.sort(key=lambda f: int(re.sub(r"\D", "", f)))
 
     start_time = datetime.now()
     with tqdm(
@@ -32,18 +35,23 @@ def main(dir, out):
                 total_time = 0
                 total_nodes = 0
 
-                for file in files:
-                    t.set_description(f"Running {alg} on {file}")
-                    result = run(f"{dir}/{d}/{file}", alg, 1)
+                with Pool(processes=5) as pool:
+                    results = pool.starmap(
+                        run, [(f"{dir}/{d}/{file}", alg, 1) for file in files]
+                    )
 
-                    total_time += result["nodes"]
-                    total_nodes += result["time"]
+                for result in results:
+                    total_time += result["time"]
+                    total_nodes += result["nodes"]
 
                 # calculate averages
                 avg_time = total_time / total_files_cnt
                 avg_nodes = total_nodes / total_files_cnt
 
-                avgs[alg] = (avg_time, avg_nodes)
+                # format seconds to min:sec:microsec
+                avg_time = datetime.fromtimestamp(avg_time).strftime("%M:%S:%f")
+
+                avgs[alg] = (avg_nodes, avg_time)
 
             with open(f"{out}/part3.txt", "a") as f:
                 f.write(f"Level: {d} \n")

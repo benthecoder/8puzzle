@@ -8,29 +8,32 @@ from utils import memoize, PriorityQueue, is_in
 # Search algorithms
 
 
-def breadth_first_tree_search(problem):
+def breadth_first_graph_search(problem):
+    """[Figure 3.11]
+    Note that this function can be implemented in a
+    single line as below:
+    return graph_search(problem, FIFOQueue())
     """
-    [Figure 3.7]
-    Search the shallowest nodes in the search tree first.
-    Search through the successors of a problem to find a goal.
-    The argument frontier should be an empty queue.
-    Repeats infinitely in case of loops.
-    """
-
-    frontier = deque([Node(problem.initial)])  # FIFO queue
-
+    node = Node(problem.initial)
+    if problem.goal_test(node.state):
+        return node
+    frontier = deque([node])
+    explored = set()
     while frontier:
         node = frontier.popleft()
-        if problem.goal_test(node.state):
-            return node
-        frontier.extend(node.expand(problem))
+        explored.add(node.state)
+        for child in node.expand(problem):
+            if child.state not in explored and child not in frontier:
+                if problem.goal_test(child.state):
+                    return child
+                frontier.append(child)
     return None
 
 
 def depth_limited_search(problem, limit=50):
     """[Figure 3.17]"""
 
-    def recursive_dls(node, problem, limit):
+    def recursive_dls(node, problem, limit, explored):
         if problem.goal_test(node.state):
             return node
         elif limit == 0:
@@ -38,15 +41,17 @@ def depth_limited_search(problem, limit=50):
         else:
             cutoff_occurred = False
             for child in node.expand(problem):
-                result = recursive_dls(child, problem, limit - 1)
-                if result == "cutoff":
-                    cutoff_occurred = True
-                elif result is not None:
-                    return result
+                if child.state not in explored:
+                    explored.add(child.state)
+                    result = recursive_dls(child, problem, limit - 1, explored)
+                    if result == "cutoff":
+                        cutoff_occurred = True
+                    elif result is not None:
+                        return result
             return "cutoff" if cutoff_occurred else None
 
     # Body of depth_limited_search:
-    return recursive_dls(Node(problem.initial), problem, limit)
+    return recursive_dls(Node(problem.initial), problem, limit, set())
 
 
 def iterative_deepening_search(problem):

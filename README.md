@@ -98,14 +98,14 @@ expected output
 
 ```txt
 --Fpath easy.txt --alg BFS
-Total nodes generated: 118
-Total time taken:, 0 sec 200 microSec
+Total nodes generated: 29
+Total time taken:, 0 sec 73 microSec
 Path length: 4
 A valid sequence of actions: DRUL
 
 --Fpath easy.txt --alg IDS
-Total nodes generated: 65
-Total time taken:, 0 sec 109 microSec
+Total nodes generated: 48
+Total time taken:, 0 sec 102 microSec
 Path length: 4
 A valid sequence of actions: DRUL
 
@@ -123,7 +123,37 @@ A valid sequence of actions: DRUL
 
 --Fpath easy.txt --alg h3
 Total nodes generated: 12
-Total time taken:, 0 sec 104 microSec
+Total time taken:, 0 sec 116 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+
+--Fpath easy.txt --alg BFS
+Total nodes generated: 29
+Total time taken:, 0 sec 75 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+
+--Fpath easy.txt --alg IDS
+Total nodes generated: 48
+Total time taken:, 0 sec 99 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+
+--Fpath easy.txt --alg h1
+Total nodes generated: 12
+Total time taken:, 0 sec 68 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+
+--Fpath easy.txt --alg h2
+Total nodes generated: 12
+Total time taken:, 0 sec 101 microSec
+Path length: 4
+A valid sequence of actions: DRUL
+
+--Fpath easy.txt --alg h3
+Total nodes generated: 12
+Total time taken:, 0 sec 112 microSec
 Path length: 4
 A valid sequence of actions: DRUL
 
@@ -151,24 +181,24 @@ python perf_analysis_p3.py --in_dir Test_p3 --out_dir test_out
 expected output
 
 ```txt
-Level: L1
-{'BFS': (118.0, 0.000261),
- 'IDS': (65.0, 0.00011),
- 'h1': (12.0, 6.4e-05),
- 'h2': (12.0, 9.7e-05),
- 'h3': (12.0, 0.00011)}
-Level: L2
-{'BFS': (118.0, 0.000222),
- 'IDS': (65.0, 0.000111),
- 'h1': (12.0, 6.6e-05),
- 'h2': (12.0, 9.3e-05),
- 'h3': (12.0, 0.000108)}
 Level: L3
-{'BFS': (118.0, 0.000226),
- 'IDS': (65.0, 0.000111),
- 'h1': (12.0, 7.3e-05),
- 'h2': (12.0, 9.6e-05),
- 'h3': (12.0, 0.000106)}
+{'BFS': (29.0, '00:00:000081'),
+ 'IDS': (48.0, '00:00:000100'),
+ 'h1': (12.0, '00:00:000073'),
+ 'h2': (12.0, '00:00:000103'),
+ 'h3': (12.0, '00:00:000119')}
+Level: L2
+{'BFS': (29.0, '00:00:000086'),
+ 'IDS': (48.0, '00:00:000101'),
+ 'h1': (12.0, '00:00:000073'),
+ 'h2': (12.0, '00:00:000108'),
+ 'h3': (12.0, '00:00:000122')}
+Level: L1
+{'BFS': (29.0, '00:00:000082'),
+ 'IDS': (48.0, '00:00:000102'),
+ 'h1': (12.0, '00:00:000075'),
+ 'h2': (12.0, '00:00:000144'),
+ 'h3': (12.0, '00:00:000128')}
 ```
 
 where the first number in tuple is the average nodes generated and the second number is the average time taken.

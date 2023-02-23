@@ -1,6 +1,7 @@
 import argparse
 from datetime import datetime
-import signal
+
+import multiprocessing
 from search import (
     EightPuzzle,
     breadth_first_graph_search,
@@ -16,7 +17,7 @@ from utils import (
 )
 
 
-def solve(problem, algo, res_dict):
+def solve(problem, algo, queue, res_dict):
 
     start_time = datetime.now()
     if algo == "BFS":
@@ -32,11 +33,9 @@ def solve(problem, algo, res_dict):
     end_time = datetime.now()
 
     time = end_time - start_time
-
-    res = {
-        "nodes": problem.nodes_generated,
-        "time": time.total_seconds(),
-    }
+    res = queue.get()
+    res["nodes"] = problem.nodes_generated
+    res["time"] = time.total_seconds()
 
     if not res_dict:
         print(f"Total nodes generated: {problem.nodes_generated}")
@@ -44,15 +43,7 @@ def solve(problem, algo, res_dict):
         print(f"Path length: {len(solution.solution())}")
         print("A valid sequence of actions:", "".join(rev_map(solution.solution())))
 
-    return res
-
-
-def handler(signum, frame):
-    print("Total nodes generated: <<??>>")
-    print("Total time taken: >15 min")
-    print("Path length: Timed out.")
-    print("Path: Timed out.")
-    exit()
+    queue.put(res)
 
 
 def run(fpath, alg, res_dict):
@@ -70,12 +61,25 @@ def run(fpath, alg, res_dict):
         print_puzzle(initial_state)
         return
 
-    signal.signal(signal.SIGALRM, handler)
-    signal.alarm(15 * 60)
+    queue = multiprocessing.Queue()
+    res = {
+        "nodes": 0,
+        "time": 0,
+    }
+    queue.put(res)
 
-    res = solve(problem, alg, res_dict)
+    p = multiprocessing.Process(target=solve, args=(problem, alg, queue, res_dict))
+    p.start()  # start the process
+    p.join(15 * 60)  # continue execution of main thread
 
-    return res
+    if p.is_alive():
+        print("Total nodes generated: <<??>>")
+        print("Total time taken: >15 min")
+        print("Path length: Timed out.")
+        print("Path: Timed out.")
+        p.terminate()
+
+    return queue.get()
 
 
 if __name__ == "__main__":
@@ -91,7 +95,7 @@ if __name__ == "__main__":
         required=False,
         default=0,
         type=int,
-        help="Returns nodes generated and time",
+        help="Returns nodes generateed and time",
     )
 
     args = parser.parse_args()
