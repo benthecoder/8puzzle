@@ -146,4 +146,12 @@ output is in [submit/part3.txt](submit/part3.txt)
 
 ## Conclusions
 
-On L8, we can observe that IDS generates 3 times more nodes but has a similar average runtime compared to BFS. However, heuristic search algorithms (h1, h2, h3) are ~10x faster and generates 10x fewer nodes on average compared to BFS and IDS. On this level, h1 is faster than h2 and h3, but as the level increases, h2 and h3 is similar in performance (both runtime and \#nodes) and is much faster than h1. BFS and IDS also increases exponentially as levels increase, where BFS is slower than IDS but generates fewer nodes on average, and IDS is faster but generates far more on average. Overall the best algorithm is h2, which is the Manhattan distance heuristic, but h3 follows closely behind.
+On L8, we can observe that `IDS` generates 3 times more nodes but has a similar average runtime compared to `BFS`. However, heuristic search algorithms (`h1`, `h2`, `h3`) are ~10x faster and generates 10x fewer nodes on average compared to `BFS` and `IDS`. `h1` is faster than `h2` and `h3` on this level, but generates slightly more nodes.
+
+As the level increases to L14, `h2` and `h3` is similar in performance (both in average runtime and \#nodes) and is faster than `h1`. This is more true in L24 where `h2` and `h3` are magnitudes faster than `h1`.
+
+As levels increase, `BFS` and `IDS` increases exponentially. `BFS` is slower than `IDS` but generates fewer nodes on average, and `IDS` is faster but generates far more on average.
+
+In L24, `h1` is slower than `IDS`.
+
+Overall the `IDS` generates the most nodes, `BFS` is the slowest, and `h2` and `h3` has shortest runtime and the least nodes generated on average.

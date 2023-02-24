@@ -1,4 +1,4 @@
-# source: https://github.com/aimacode/aima-python/blob/master/search4e.ipynb
+# https://github.com/aimacode/aima-python/blob/668a2fb0bcd28b4963648c1425f904baa3826a8f/search.py
 
 import sys
 from collections import deque

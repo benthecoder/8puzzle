@@ -5,9 +5,10 @@ from pprint import pprint
 from datetime import datetime
 import argparse
 from pathlib import Path
-from multiprocessing import Pool
 import re
-import concurrent.futures
+
+# from multiprocessing import Pool
+# import concurrent.futures
 
 
 def main(dir, out):
